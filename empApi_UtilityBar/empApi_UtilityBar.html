@@ -1,0 +1,28 @@
+<template>
+    <lightning-card  variant="Narrow"  title="List of open Cases" icon-name="standard:account" class="container">
+        <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <div>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered container">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th scope="col"> Case Number</th>
+                        <th scope="col"> Subject </th>
+                        <th scope="col"> Status </th>
+                        <th scope="col"> Response </th>
+                    </tr>
+                </thead>
+                <template if:true={data} for:each={data} for:item="cas" for:index="index">
+                    <tbody key={cas.index}>
+                        <tr class="slds-hint-parent">
+                            <th scope="row"> {cas.CaseNumber} </th>
+                            <th scope="row"> {cas.Subject} </th>
+                            <th scope="row"> {cas.Status} </th>
+                            <th scope="row"> <img src={tickUrl}> </th>
+                        </tr>
+                    </tbody>
+                </template>
+
+            </table>
+        </div>
+    </lightning-card>
+</template>
