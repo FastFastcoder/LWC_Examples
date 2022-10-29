@@ -1,0 +1,19 @@
+<template>
+    <lightning-Card title="List of Accounts" icon-name="standard:account">
+        <lightning-button   variant="Neutral"
+                            label="Selected Records"
+                            title="Selected Records"
+                            onclick={getSelectedRec} 
+                            slot="actions"
+                            icon-name="utility:check">
+        </lightning-button>
+        <div>
+            <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    columns={columns}
+                    column-widths-mode="fixed">
+            </lightning-datatable>
+        </div>
+    </lightning-Card>
+</template>
